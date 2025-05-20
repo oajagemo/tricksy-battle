@@ -1,6 +1,14 @@
 INST126 Project
 Mercy Ajagemo
 
+How to play 
+
+1. Open terminal (or command line).
+2. Make sure Python is installed.
+3. Run the file like this:
+
+```python app.py ```
+
 What it does
 - The cards are shuffled randomly.
 - Each card in hand is printed out to the screen and corresonads to number a user can input
@@ -25,4 +33,3 @@ What it does not do
 
 humans > computers 
 
-python tricksy_battle.py
