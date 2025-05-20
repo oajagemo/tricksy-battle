@@ -13,6 +13,7 @@ What it does
 - Game ends when all cards are played.
 
 - if player picked invalid/wrong choice - the code tells the human (You) to pick another choice until you pick a valid option 
+- tells player to follow lead suit - but does not show lead suit which I understand can be confusing
 
 What it does not do
 - Humans always go first so the first player is not random 
