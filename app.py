@@ -24,7 +24,7 @@ def deal_cards(deck, hand, count=8):
 
 
 def show_card(card):
-    return str(card[0]) + " of " + card[1]
+    return str(card[0]) + " of " + card[1] 
 
 # Show all cards 
 def show_hand(hand):
@@ -33,16 +33,17 @@ def show_hand(hand):
         print(str(i + 1) + ": " + show_card(card))
 
 # Let the player choose a card
-def player_choose_card(hand, lead_suit=None):
+def player_choose_card(hand, lead_suit=None): #make lead_suit a default None so i can go around 
     while True:
         print("\nYour hand:")
         show_hand(hand)
 
         try:
+            #make input integer - comes in a stirng first 
             choice = int(input("Choose a card to play: ")) - 1
             chosen = hand[choice]
 
-            
+            # if lead suit actually exists
             if lead_suit is not None:
                 has_same_suit = False
                 for card in hand:
@@ -61,6 +62,7 @@ def player_choose_card(hand, lead_suit=None):
 
 def computer_play_card(hand, lead_suit=None):
     for card in hand:
+        #if the lead card exists and suit is eqaul to that first card then remove the card from hand a play it
         if lead_suit is not None and card[1] == lead_suit:
             hand.remove(card)
             return card
