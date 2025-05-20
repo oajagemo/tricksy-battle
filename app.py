@@ -10,6 +10,7 @@ computer_points = 0
 
 # Create deck
 def create_deck():
+    "create the deck for the game"
     new_deck = []
     for suit in suits:
         for number in range(1, 13):  # 1-12, no King
@@ -19,21 +20,25 @@ def create_deck():
 
 
 def deal_cards(deck, hand, count=8):
+    "deal cards for the game"
     for i in range(count):
         hand.append(deck.pop())
 
 
 def show_card(card):
+    "show the card that is picked by getting the number and then the suit and returning the string"
     return str(card[0]) + " of " + card[1] 
 
 # Show all cards 
 def show_hand(hand):
+    "showing the hand by using the show_card function looped through hand"
     for i in range(len(hand)):
         card = hand[i]
         print(str(i + 1) + ": " + show_card(card))
 
 # Let the player choose a card
 def player_choose_card(hand, lead_suit=None): #make lead_suit a default None so i can go around 
+    "allowing player to choose card to play, makes player choose card they have"
     while True:
         print("\nYour hand:")
         show_hand(hand)
@@ -61,6 +66,7 @@ def player_choose_card(hand, lead_suit=None): #make lead_suit a default None so 
 
 
 def computer_play_card(hand, lead_suit=None):
+    "allows computer to pick card"
     for card in hand:
         #if the lead card exists and suit is eqaul to that first card then remove the card from hand a play it
         if lead_suit is not None and card[1] == lead_suit:
@@ -70,6 +76,7 @@ def computer_play_card(hand, lead_suit=None):
 
 
 def determine_winner(card1, card2, lead_suit):
+    "determines winner by evaluting the cards "
     if card2[1] != lead_suit:
         return "player"
     elif card1[0] > card2[0]:
@@ -79,6 +86,7 @@ def determine_winner(card1, card2, lead_suit):
 
 
 def play_game():
+    "play game function calls all required functions to start the game"
     global deck, player_points, computer_points
 
     deck = create_deck()
